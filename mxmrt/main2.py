@@ -12,14 +12,14 @@ import numpy as np
 import mxnet as mx
 from mxnet import gluon, ndarray as nd
 
-from mrt import conf
-from mrt.transformer import Model, reduce_graph, MRT
-from mrt.gluon_zoo import save_model
-from mrt import dataset as ds
-from mrt import sim_quant_helper as sim
-from mrt import utils
-from mrt import sym_utils as sutils
-from mrt import cvm_op
+from mxmrt import conf
+from mxmrt.transformer import Model, reduce_graph, MRT
+from mxmrt.gluon_zoo import save_model
+from mxmrt import dataset as ds
+from mxmrt import sim_quant_helper as sim
+from mxmrt import utils
+from mxmrt import sym_utils as sutils
+from mxmrt import cvm_op
 
 def set_batch(input_shape, batch):
     """Get the input shape with respect to a specified batch value and an original input shape.
@@ -56,7 +56,7 @@ def batch_axis(input_shape):
     return idx[0]
 
 def _check(expression, section, option, message='Not a valid value'):
-    """check whether an operation of main2 if valid and report error message if invalid.
+    """check whether an operation if valid and report error message if invalid.
 
     Parameters
     ----------
